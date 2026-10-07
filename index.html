@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The WhipHouze Co. | The Art of Buttercream Creations | Omaha, NE</title>
+  <meta name="description" content="The WhipHouze Co. is an Omaha, NE certified cottage bakery: custom buttercream bakes, cupcake decorating classes, and editable Canva invitation templates.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="The WhipHouze Co. home">The <span>WhipHouze</span> Co.</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu &amp; Ordering</a></li>
+          <li><a href="#invitations">Invitations (Shop)</a></li>
+          <li><a href="#merch">Merchandise</a></li>
+          <li><a href="#events">Local Events</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- STICKY ORDER POLICY ALERT -->
+    <div class="policy-alert" role="note" aria-label="Ordering policy">
+      <div class="container policy-alert-inner">
+        <p>
+          <strong>Custom orders need 3 days minimum notice.</strong>
+          <span>50% deposit or pay in full &middot; $24 flat delivery</span>
+        </p>
+        <a href="#ordering">Ordering policies</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Omaha, NE &middot; Certified Cottage Baker</p>
+          <h1>The Art of <em>Buttercream</em> Creations</h1>
+          <p class="tagline">From Whip to Bloom &mdash; Made with 💜</p>
+          <p class="lede">
+            Aesthetic custom bakes, hand-piped buttercream florals, decorating classes,
+            and editable invitation templates, all from one Omaha kitchen.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#menu">Explore the Menu</a>
+            <a class="btn btn-ghost" href="#invitations">Shop Invitations</a>
+          </div>
+          <ul class="niche-list" aria-label="Who we bake for">
+            <li>Weddings</li>
+            <li>Corporate Events</li>
+            <li>Private Parties</li>
+            <li>Social Nights at a Friend&rsquo;s House</li>
+          </ul>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="bloom bloom--lg"></div>
+          <div class="bloom bloom--md"></div>
+          <div class="bloom bloom--sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU & ORDERING -->
+    <section class="section" id="menu">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Menu &amp; Ordering</p>
+          <h2>Baked to order, piped by hand</h2>
+          <p>Browse by category. Every order is made fresh for your date.</p>
+        </header>
+
+        <div class="filter-bar" id="menu-filters" role="group" aria-label="Filter menu by category"></div>
+        <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+
+        <!-- ORDERING TERMS PANEL -->
+        <div class="terms" id="ordering">
+          <div class="terms-rules">
+            <h3>Ordering policies</h3>
+            <ul class="rule-list">
+              <li>
+                <span class="rule-key">Notice</span>
+                <span>Minimum <strong>3 days notice</strong> required for all custom orders.</span>
+              </li>
+              <li>
+                <span class="rule-key">Option A</span>
+                <span><strong>50% down deposit</strong> secures your date and time. The final balance is due strictly <strong>3 days before pickup</strong>.</span>
+              </li>
+              <li>
+                <span class="rule-key">Option B</span>
+                <span><strong>Pay in full</strong> at the time of ordering.</span>
+              </li>
+              <li>
+                <span class="rule-key">Delivery</span>
+                <span>Available for a flat <strong>$24</strong> fee.</span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="planner" id="order-planner" novalidate>
+            <h3>Plan your order</h3>
+            <p class="planner-intro">Check your date and see what is due when.</p>
+
+            <label for="pickup-date">Pickup or delivery date</label>
+            <input type="date" id="pickup-date" name="pickupDate" required>
+
+            <label for="order-total">Estimated order total <span class="optional">(optional)</span></label>
+            <div class="input-prefix">
+              <span>$</span>
+              <input type="number" id="order-total" name="orderTotal" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+            </div>
+
+            <fieldset>
+              <legend>Payment option</legend>
+              <label class="choice"><input type="radio" name="payment" value="deposit" checked> Option A: 50% deposit</label>
+              <label class="choice"><input type="radio" name="payment" value="full"> Option B: Pay in full</label>
+            </fieldset>
+
+            <label class="choice"><input type="checkbox" id="add-delivery" name="delivery"> Add delivery ($24 flat)</label>
+
+            <div class="planner-result" id="planner-result" role="status" aria-live="polite">
+              Choose a date to see your payment schedule.
+            </div>
+
+            <a class="btn btn-primary btn-block" id="order-request-link" href="#" target="_blank" rel="noopener">Start an Order Request</a>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVITATIONS SHOP -->
+    <section class="section section--tint" id="invitations">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Invitations (Shop)</p>
+          <h2>Editable templates, built for Canva</h2>
+          <p>Instant digital downloads. Change the names, wording, colors, and fonts, then print or send.</p>
+        </header>
+
+        <div class="filter-bar" id="invite-filters" role="group" aria-label="Filter invitations by collection"></div>
+        <div class="product-grid" id="invite-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- MERCHANDISE -->
+    <section class="section" id="merch">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Merchandise</p>
+          <h2>Bring the WhipHouze home</h2>
+          <p>Baking gear and on-brand goods for your own kitchen.</p>
+        </header>
+
+        <div class="product-grid" id="merch-grid"></div>
+      </div>
+    </section>
+
+    <!-- LOCAL EVENTS -->
+    <section class="section section--deep" id="events">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Local Events</p>
+          <h2>Floral Buttercream Cupcake Decorating Classes</h2>
+          <p>Learn to pipe buttercream blooms in Omaha. Join a public class, or book a private session for your team or your friends.</p>
+        </header>
+
+        <div class="filter-bar filter-bar--light" id="event-filters" role="group" aria-label="Filter events by type"></div>
+        <ul class="event-list" id="event-list" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h2>Buttercream in bloom</h2>
+          <p>A look at custom buttercream flower work from the WhipHouze kitchen.</p>
+        </header>
+
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="#home">The <span>WhipHouze</span> Co.</a>
+        <p>From Whip to Bloom &mdash; Made with 💜</p>
+      </div>
+      <p>Omaha, NE &middot; Certified Cottage Baker<br>&copy; <span id="year">2026</span> The WhipHouze Co.</p>
+    </div>
+  </footer>
+</body>
+</html>
